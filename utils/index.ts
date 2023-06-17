@@ -5,13 +5,13 @@ const options = {
   },
 };
 
-export async function fetchCars<QueryResult>({
+export async function fetchCars({
   model,
   manufacturer = "",
   year = 2022,
   fuel,
   limit = 10,
-}: IFilterParams): Promise<QueryResult> {
+}: IFilterParams): Promise<ICar[] | { message: string }> {
   const response = await fetch(
     `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?${
       model ? `model=${model}&` : ""

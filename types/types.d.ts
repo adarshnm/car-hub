@@ -52,7 +52,7 @@ interface IFilterOption {
 interface IFilterParams {
   title: string;
   options: Array<IFilterOption>;
-  activeParam?: string;
+  activeParam?: string | number;
 }
 
 interface IShowMoreProps {
